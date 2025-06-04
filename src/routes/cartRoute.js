@@ -1,22 +1,15 @@
+const { listarItens, criarCarrinho, deletarCarrinho} = require('../controllers/cartItemController.js')
+
 const router = require('express').Router();
 
-router.get('/:id/itens', (req, res) => {
-    res.send('Listar carrinho')
-})
-router.post('/', (req, res) => {
-    res.send('Criar carrinho')
-})
-router.post('/item', (req, res) => {
-    res.send('Adicionar itens ao carrinho')
-})
-router.put('/item/:id', (req, res) => {
-    res.send('Alterar a quantidade item carrinho')
-})
-router.delete('/item/:id', (req, res) => {
-    res.send('Deletar item carrinho')
-})
-router.delete('/:id/itens', (req, res) => {
-    res.send('Deletar carrinho')
-})
+//listar carrinho itens
+router.get('/:id/itens', listarItens) 
+
+//cria carrinho
+router.post('/', criarCarrinho) 
+
+// Deleta todos os itens do carrinho
+router.delete('/:id/itens', deletarCarrinho) 
+
 
 module.exports = router;

@@ -1,23 +1,21 @@
-const express = require('express')
-const cartRoute = require('/src/routes/cartRoute.js')
+const express = require('express');
+const cartRoute = require('./src/routes/cartRoute.js')
 
 const app = express();
-const port = 3000
+const port = 3000;
 
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send('Hello world')
-
+   res.send('Hello world') 
 })
 
 app.get('/boas-vindas', (req, res) => {
-    res.send('Seja Bem-vindo')
+   res.send('Seja bem-vindo') 
 })
 
-app.use('carrinho', cartRoute);
+app.use('/carrinho', cartRoute)
 
 app.listen(port, () => {
-    console.log(`Servidor rodando na url http://locashost:${port}`);
-    
+    console.log(`Servidor rodando na url http://localhost:${port}`)
 })
