@@ -3,10 +3,13 @@ const { inserirItens, alterarItens, deletarItens} = require('../controllers/cart
 
 
  //insere itens no carrinho
-router.post('/item', inserirItens) 
- 
+router.post('/item', inserirItens)
+
  //Alterar a quantidade item carrinho
-router.put('/item/:id', alterarItens)
+router.put('/item/:id', alterarItens) 
 
 //deleta item
-router.delete('/item/:id', deletarItens)
+router.delete('/item/:id', deletarItens) 
+
+
+module.exports = router
